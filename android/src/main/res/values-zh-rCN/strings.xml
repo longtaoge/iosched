@@ -714,11 +714,11 @@
     <!-- Text for a button which allows the user to watch this particular session on live stream. -->
     <string name="watch_now">现在观看！</string>
 
-    <!-- Medium-length welcome text indicating the subsequent text is important legal information -->
+    <!-- Medium-length welcome text indicating the subsequent text is important legal information 欢迎界面正文-->
     <string name="welcome_text">在我们开始之前，这里展示了有关你使用这个应用程序的一些重要法律资料。阅读只需一分钟！</string>
 
-    <!-- Short text welcoming the user to the application -->
-    <string name="welcome_to_google_i_o_app">欢迎来到谷歌 I/O 应用程序！</string>
+    <!-- Short text welcoming the user to the application 欢迎界面-->
+  <string name="welcome_to_google_i_o_app">欢迎来到谷歌 I/O 应用程序！</string>
 
     <!-- Text for a button which will add a wi-fi network -->
     <string name="wifi_dialog_button_configure">新增WiFi网络</string>
