@@ -171,11 +171,20 @@ public class PrefUtils  {
         return sp.getBoolean(PREF_USER_REFUSED_SIGN_IN, false);
     }
 
+    /**
+     * 获取用户协议是否已阅读同意标志
+     * @param context
+     * @return
+     */
     public static boolean wasDebugWarningShown(final Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         return sp.getBoolean(PREF_DEBUG_BUILD_WARNING_SHOWN, false);
     }
 
+    /**
+     * 欢迎页设置用户协议已阅读标志
+     * @param context
+     */
     public static void markDebugWarningShown(final Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putBoolean(PREF_DEBUG_BUILD_WARNING_SHOWN, true).commit();

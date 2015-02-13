@@ -58,7 +58,7 @@ public class WelcomeActivity extends Activity {
     public void onResume() {
         super.onResume();
 
-        // Shows the debug warning, if this is a debug build and the warning has not been shown yet
+        //显示用户协议 Shows the debug warning, if this is a debug build and the warning has not been shown yet
         if (Config.IS_DOGFOOD_BUILD && !PrefUtils.wasDebugWarningShown(this)) {
             new AlertDialog.Builder(this)
                     .setTitle(Config.DOGFOOD_BUILD_WARNING_TITLE)

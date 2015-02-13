@@ -90,7 +90,7 @@ public class BrowseSessionsActivity extends BaseActivity implements SessionsFrag
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_browse_sessions);
-
+        // 工具条
         Toolbar toolbar = getActionBarToolbar();
 
         long[] interval = ScheduleContract.Sessions.getInterval(getIntent().getData());
