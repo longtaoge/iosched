@@ -176,6 +176,7 @@
             </intent-filter>
         </activity>
 
+        <!--欢迎界面-->
         <activity android:name=".ui.WelcomeActivity" android:theme="@style/Theme.IOSched.Welcome" />
 
         <activity android:name=".ui.VideoLibraryActivity"

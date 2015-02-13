@@ -24,6 +24,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
+/**
+ * 配置文件
+ */
 public class Config {
     // General configuration
 

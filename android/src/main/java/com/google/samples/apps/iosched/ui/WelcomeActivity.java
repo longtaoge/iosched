@@ -25,6 +25,9 @@ import com.google.samples.apps.iosched.Config;
 import com.google.samples.apps.iosched.R;
 import com.google.samples.apps.iosched.util.PrefUtils;
 
+/**
+ * 欢迎界面 只有第一次启动时展示
+ */
 public class WelcomeActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,8 +37,9 @@ public class WelcomeActivity extends Activity {
 
         findViewById(R.id.button_accept).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {//如果同意，则在sp中标记
                 PrefUtils.markTosAccepted(WelcomeActivity.this);
+                //启动布首页（劳斯聚会页面）
                 Intent intent = new Intent(WelcomeActivity.this, BrowseSessionsActivity.class);
                 startActivity(intent);
                 finish();
@@ -44,7 +48,7 @@ public class WelcomeActivity extends Activity {
 
         findViewById(R.id.button_decline).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {//如果拒绝，直接退出
                 finish();
             }
         });

@@ -27,7 +27,9 @@ import static com.google.samples.apps.iosched.util.LogUtils.LOGD;
 import static com.google.samples.apps.iosched.util.LogUtils.makeLogTag;
 
 /**
+ * preferences 工具类 及标志位常量
  * Utilities and constants related to app preferences.
+ *
  */
 public class PrefUtils  {
     private static final String TAG = makeLogTag("PrefUtils");
@@ -66,7 +68,7 @@ public class PrefUtils  {
      */
     public static final String PREF_DEBUG_BUILD_WARNING_SHOWN = "pref_debug_build_warning_shown";
 
-    /** Boolean indicating whether ToS has been accepted */
+    /** Boolean indicating whether ToS has been accepted 是否同意用户协议   */
     public static final String PREF_TOS_ACCEPTED = "pref_tos_accepted";
 
     /** Boolean indicating whether ToS has been accepted */
