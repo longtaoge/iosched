@@ -30,13 +30,14 @@
         android:layout_height="match_parent"
         android:clipChildren="false"
         app:shadowDrawable="@drawable/header_shadow">
-
+<!-- 下拉刷新-->
         <com.google.samples.apps.iosched.ui.widget.MultiSwipeRefreshLayout
             android:id="@+id/swipe_refresh_layout"
+            android:background="#ff119d1b"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!-- Sessions fragment showing the session grid -->
+            <!-- Sessions fragment showing the session grid 显示议程表格的Fragment -->
             <fragment android:name="com.google.samples.apps.iosched.ui.SessionsFragment"
                 android:id="@+id/sessions_fragment"
                 android:layout_width="match_parent"
