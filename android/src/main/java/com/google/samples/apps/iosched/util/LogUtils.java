@@ -16,18 +16,36 @@
 
 package com.google.samples.apps.iosched.util;
 
+import android.util.Log;
+
 import com.google.samples.apps.iosched.BuildConfig;
 import com.google.samples.apps.iosched.Config;
 
-import android.util.Log;
-
+/**
+ * 日志工具类
+ */
 public class LogUtils {
+    /**
+     * 日志前缀
+     */
     private static final String LOG_PREFIX = "iosched_";
+    /**
+     * 日志前缀长度
+     */
     private static final int LOG_PREFIX_LENGTH = LOG_PREFIX.length();
+    /**
+     * 最大的日志标签长度
+     */
     private static final int MAX_LOG_TAG_LENGTH = 23;
 
+    /**
+     * 通过字符串生成日志标签，如果字符串长度过长，则截取
+     * @param str
+     * @return
+     */
     public static String makeLogTag(String str) {
         if (str.length() > MAX_LOG_TAG_LENGTH - LOG_PREFIX_LENGTH) {
+
             return LOG_PREFIX + str.substring(0, MAX_LOG_TAG_LENGTH - LOG_PREFIX_LENGTH - 1);
         }
 
@@ -35,7 +53,9 @@ public class LogUtils {
     }
 
     /**
+     * 日志工具，返回类的简单名称
      * Don't use this when obfuscating class names!
+     *
      */
     public static String makeLogTag(Class cls) {
         return makeLogTag(cls.getSimpleName());

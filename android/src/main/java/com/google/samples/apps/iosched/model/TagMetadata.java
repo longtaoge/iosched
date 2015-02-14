@@ -27,14 +27,22 @@ import com.google.samples.apps.iosched.provider.ScheduleContract;
 
 import java.util.*;
 
+/**
+ * 标签元数据
+ */
 public class TagMetadata {
 
-    // list of tags in each category, sorted by the category sort order
+    // 标签列表  list of tags in each category, sorted by the category sort order
     HashMap<String, ArrayList<Tag>> mTagsInCategory = new HashMap<String, ArrayList<Tag>>();
 
     // hash map from tag ID to tag
     HashMap<String, Tag> mTagsById = new HashMap<String, Tag>();
 
+    /**
+     * 异步查询数据库
+     * @param context
+     * @return
+     */
     public static CursorLoader createCursorLoader(Context context) {
         return new CursorLoader(context, ScheduleContract.Tags.CONTENT_URI, TagsQuery.PROJECTION,
                 null, null, null);
@@ -120,6 +128,9 @@ public class TagMetadata {
         int TAG_COLOR = 6;
     }
 
+    /**
+     * 标签
+     */
     static public class Tag implements Comparable<Tag> {
         private String mId;
         private String mName;
@@ -128,6 +139,15 @@ public class TagMetadata {
         private String mAbstract;
         private int mColor;
 
+        /**
+         * 标签构造
+         * @param id
+         * @param name
+         * @param category
+         * @param orderInCategory
+         * @param _abstract
+         * @param color
+         */
         public Tag(String id, String name, String category, int orderInCategory, String _abstract,
                 int color) {
             mId = id;

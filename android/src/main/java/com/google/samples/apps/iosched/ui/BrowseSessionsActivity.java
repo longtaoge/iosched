@@ -49,33 +49,57 @@ import java.util.List;
 
 import static com.google.samples.apps.iosched.util.LogUtils.*;
 
+/**
+ * 布劳斯研讨会 主页
+ */
 public class BrowseSessionsActivity extends BaseActivity implements SessionsFragment.Callbacks {
+    /**
+     * 生成日志标签
+     */
     private static final String TAG = makeLogTag(BrowseSessionsActivity.class);
 
-    // How is this Activity being used?
-    private static final int MODE_EXPLORE = 0; // as top-level "Explore" screen
-    private static final int MODE_TIME_FIT = 1; // showing sessions that fit in a time interval
-
+    // Activity 的级别 How is this Activity being used?
+    private static final int MODE_EXPLORE = 0; // 顶级窗口，浏览页面 as top-level "Explore" screen
+    private static final int MODE_TIME_FIT = 1; // 显示议程页 showing sessions that fit in a time interval
+    /**
+     * 状态过滤
+     */
     private static final String STATE_FILTER_0 = "STATE_FILTER_0";
     private static final String STATE_FILTER_1 = "STATE_FILTER_1";
     private static final String STATE_FILTER_2 = "STATE_FILTER_2";
-
+    /**
+     * 扩展的过滤标签
+     */
     public static final String EXTRA_FILTER_TAG = "com.google.android.iosched.extra.FILTER_TAG";
 
+    /**
+     * Activity 模式 初始值为顶级窗口
+     */
     private int mMode = MODE_EXPLORE;
 
+    /**
+     * 屏幕标签
+     */
     private final static String SCREEN_LABEL = "Explore";
 
+    /**
+     *标签元数据
+     */
     private TagMetadata mTagMetadata = null;
     private boolean mSpinnerConfigured = false;
 
-    // filter tags that are currently selected
+    // 过滤当前选择的标签filter tags that are currently selected
     private String[] mFilterTags = { "", "", "" };
 
-    // filter tags that we have to restore (as a result of Activity recreation)
+    // 恢复标签  filter tags that we have to restore (as a result of Activity recreation)
     private String[] mFilterTagsToRestore = { null, null, null };
-
+    /**
+     * 下拉列表的适配器
+     */
     private ExploreSpinnerAdapter mTopLevelSpinnerAdapter = new ExploreSpinnerAdapter(true);
+    /**
+     * 议程Fragment
+     */
     private SessionsFragment mSessionsFrag = null;
 
     private DrawShadowFrameLayout mDrawShadowFrameLayout;
