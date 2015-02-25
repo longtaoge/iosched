@@ -17,6 +17,9 @@ package com.google.samples.apps.iosched.gcm;
 
 import android.content.Context;
 
+/**
+ * GCM指令接口
+ */
 public abstract class GCMCommand {
     public abstract void execute(Context context, String type, String extraData);
 }
