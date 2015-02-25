@@ -190,12 +190,22 @@ public class PrefUtils  {
         sp.edit().putBoolean(PREF_DEBUG_BUILD_WARNING_SHOWN, true).commit();
     }
 
+    /**
+     * 同意用户协议
+     * @param context
+     * @return
+     */
     public static boolean isTosAccepted(final Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         return sp.getBoolean(PREF_TOS_ACCEPTED, false);
     }
 
+    /**
+     * 标志为用户同意协议
+     * @param context
+     */
     public static void markTosAccepted(final Context context) {
+
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putBoolean(PREF_TOS_ACCEPTED, true).commit();
     }

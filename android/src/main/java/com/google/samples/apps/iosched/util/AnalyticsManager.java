@@ -27,9 +27,12 @@ import com.google.samples.apps.iosched.R;
 import static com.google.samples.apps.iosched.util.LogUtils.LOGD;
 
 /**
- * 解析管理器
+ * 访问统计管理器
  */
 public class AnalyticsManager {
+    /**
+     * 上下文
+     */
     private static Context sAppContext = null;
 
     private static Tracker mTracker;

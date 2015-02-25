@@ -129,6 +129,7 @@ public class BrowseSessionsActivity extends BaseActivity implements SessionsFrag
              * TRIGGER:   View the Explore screen to find sessions fitting a time slot
              * LABEL:    'Explore <time interval>'
              * [/ANALYTICS]
+             * 访问统计
              */
             AnalyticsManager.sendScreenView(SCREEN_LABEL + ": " + title);
         } else {
@@ -288,6 +289,9 @@ public class BrowseSessionsActivity extends BaseActivity implements SessionsFrag
         }
         mFilterTagsToRestore[0] = null;
 
+        /**
+         * 标题工具栏中的下拉列表
+         */
         View spinnerContainer = LayoutInflater.from(this).inflate(R.layout.actionbar_spinner,
                 toolbar, false);
         ActionBar.LayoutParams lp = new ActionBar.LayoutParams(
@@ -512,6 +516,12 @@ public class BrowseSessionsActivity extends BaseActivity implements SessionsFrag
         mDrawShadowFrameLayout.setShadowVisible(shown, shown);
     }
 
+    /**
+     *
+     * 下拉菜单
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -603,10 +613,21 @@ public class BrowseSessionsActivity extends BaseActivity implements SessionsFrag
             mItems.clear();
         }
 
+        /**
+         * 添加条目
+         * @param tag
+         * @param title
+         * @param indented
+         * @param color
+         */
         public void addItem(String tag, String title, boolean indented, int color) {
             mItems.add(new ExploreSpinnerItem(false, tag, title, indented, color));
         }
 
+        /**
+         * 添加头部
+         * @param title
+         */
         public void addHeader(String title) {
             mItems.add(new ExploreSpinnerItem(true, "", title, false, 0));
         }
