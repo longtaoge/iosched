@@ -47,7 +47,10 @@ import com.google.samples.apps.iosched.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.google.samples.apps.iosched.util.LogUtils.*;
+import static com.google.samples.apps.iosched.util.LogUtils.LOGD;
+import static com.google.samples.apps.iosched.util.LogUtils.LOGE;
+import static com.google.samples.apps.iosched.util.LogUtils.LOGW;
+import static com.google.samples.apps.iosched.util.LogUtils.makeLogTag;
 
 /**
  * 布劳斯研讨会 主页
@@ -129,10 +132,14 @@ public class BrowseSessionsActivity extends BaseActivity implements SessionsFrag
              */
             AnalyticsManager.sendScreenView(SCREEN_LABEL + ": " + title);
         } else {
-            /* [ANALYTICS:SCREEN]
+            /*
+             *
+             * 访问统计
+             * [ANALYTICS:SCREEN]
              * TRIGGER:   View the Explore screen (landing screen)
              * LABEL:    'Explore'
              * [/ANALYTICS]
+             *
              */
             AnalyticsManager.sendScreenView(SCREEN_LABEL);
         }

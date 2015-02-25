@@ -18,15 +18,17 @@ package com.google.samples.apps.iosched.util;
 
 import android.content.Context;
 
-import com.google.samples.apps.iosched.BuildConfig;
-import com.google.samples.apps.iosched.R;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.google.samples.apps.iosched.BuildConfig;
+import com.google.samples.apps.iosched.R;
 
 import static com.google.samples.apps.iosched.util.LogUtils.LOGD;
-import static com.google.samples.apps.iosched.util.LogUtils.LOGI;
 
+/**
+ * 解析管理器
+ */
 public class AnalyticsManager {
     private static Context sAppContext = null;
 
